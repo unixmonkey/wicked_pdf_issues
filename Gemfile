@@ -38,3 +38,5 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'wicked_pdf', '0.10.2'
+gem 'wkhtmltopdf-binary'
