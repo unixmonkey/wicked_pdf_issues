@@ -1,0 +1,29 @@
+<h1>Issue #326</h1>
+
+<p>
+  I have this problem only with the newest version, previous version(0.10.2) works great.
+</p>
+
+<p>
+  After
+  <pre>
+    render pdf: "file_name", cookie: cookie: "_session_id #{CGI.escape(cookies['_session_id'].to_s)}"
+  </pre>
+</p>
+
+<p>
+  I am getting:
+  <pre>
+    Error: Failed to execute:
+    [
+      "/Users/tomaswitek/.rbenv/versions/2.1.1/bin/wkhtmltopdf", "-q",
+      "--cookie", "_session_id hash",
+      "file:///var/folders/g8/nlcqcrvj0n9gjsnf1zn1m97m0000gn/T/wicked_pdf20140815-72541-1d7mfow.html",
+      "/var/folders/g8/nlcqcrvj0n9gjsnf1zn1m97m0000gn/T/wicked_pdf_generated_file20140815-72541-1vyipr3.pdf"
+    ]
+    Error: PDF could not be generated!
+     Command Error: You need to specify atleast one input file,
+     and exactly one output file
+    Use - for stdin or stdout
+  </pre>
+</p>
