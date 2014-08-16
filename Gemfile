@@ -40,3 +40,4 @@ gem 'spring',        group: :development
 
 gem 'wicked_pdf', '0.10.2'
 gem 'wkhtmltopdf-binary'
+gem 'pry-rails'
