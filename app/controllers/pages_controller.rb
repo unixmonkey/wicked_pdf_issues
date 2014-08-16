@@ -11,4 +11,22 @@ class PagesController < ApplicationController
     end
   end
 
+  def issue_321
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'issue_321',
+          # cover: 'http://google.com',
+          margin: { top: 40, bottom: 40 },
+          toc: {
+            header_text: 'THIS IS THE WAY THE WORLD ENDS',
+            disable_dotted_lines: true,
+            disable_toc_links: true,
+            level_indentation: 10,
+            text_size_shrink: 0.5
+          }
+      end
+    end
+  end
+
 end
