@@ -29,4 +29,18 @@ class PagesController < ApplicationController
     end
   end
 
+  def issue_327
+    respond_to do |format|
+      format.html do
+        render layout: 'issue_327'
+      end
+      format.pdf do
+        render pdf: 'oferta',
+          layout: 'issue_327.html.erb',
+          print_media_type: true,
+          show_as_html: params[:debug]
+      end
+    end
+  end
+
 end

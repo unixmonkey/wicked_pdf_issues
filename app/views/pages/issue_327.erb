@@ -1,0 +1,50 @@
+<h1>Issue #327</h1>
+
+<p>
+  I am rendering a pdf file like this:
+</p>
+
+<pre>
+  format.pdf do
+    render :pdf => 'oferta',
+    :template => 'templates/show_offer.pdf.erb',
+    :layout => "layouts/templates.html.erb",
+    :print_media_type => true,
+    :page_size => "A4",
+    :disable_smart_shrinking => true,
+    :footer => { :right => '[page] of [topage]' }
+  end
+</pre>
+
+<p>
+  My layout file looks like this:
+</p>
+
+<pre>
+  javascript_include_tag "jquery", "application"
+  stylesheet_link_tag "templates", media: "all"
+  wicked_pdf_javascript_include_tag "number_pages"
+  wicked_pdf_stylesheet_link_tag "templates", media: "all"
+</pre>
+
+<p>
+  And my templates.css file:
+</p>
+
+<pre>
+  /*
+  *= require bootstrap_and_overrides
+  *= require on_the_spot
+  *= require_self
+  */
+</pre>
+
+<p>
+  However, my rendered pdf file includes styling from this file, only not the bootstrap styling (colors etc.)
+</p>
+<p>
+  What am I doing wrong? Should I use a precompiler in the wicked_pdf.rb initializer file?
+</p>
+<p>
+  Thanks in advance!
+</p>

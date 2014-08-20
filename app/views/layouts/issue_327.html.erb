@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Issue #327</title>
+    <%= javascript_include_tag "jquery", "application" %>
+    <%= stylesheet_link_tag "issue_327", media: "all" %>
+    <%= wicked_pdf_stylesheet_link_tag "issue_327", media: "all" %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>
