@@ -1,0 +1,24 @@
+<style type='text/css'>
+  table {
+     border-collapse: collapse;
+  }
+  td {
+     border: 2px solid black;
+  }
+  .break {
+    page-break-after: always;
+  }
+</style>
+
+<h1>Issue #330</h1>
+<% 2.times do %>
+  <table>
+    <tr>
+      <% 10.times do %>
+        <td>REALLYLONGLONGLINESUPERCALIFRAGILISTICEXPIALIDOCIOUS</td>
+      <% end %>
+    </tr>
+  </table>
+
+  <div class='break'>&nbsp;</div>
+<% end %>

@@ -43,4 +43,44 @@ class PagesController < ApplicationController
     end
   end
 
+  def issue_330
+    respond_to do |format|
+      format.html
+      format.pdf do
+        if params[:show] == 'native'
+          render pdf: 'issue_327',
+            orientation: 'Landscape',
+            page_width: 2000,
+            dpi: 300
+        elsif params[:show] == 'issue'
+          pdf = WickedPdf.new.pdf_from_string(
+            render_to_string(
+              template: 'pages/issue_330',
+              formats: [:pdf],
+              handlers: [:erb],
+              orientation: 'Landscape',
+              page_width: '2000',
+              dpi: '300'
+            )
+          )
+          send_data pdf, type: 'application/pdf', disposition: 'inline'
+        else
+          string = render_to_string(
+            template: 'pages/issue_330',
+            formats: [:pdf],
+            handlers: [:erb]
+          )
+          options = {
+            orientation: 'Landscape',
+            page_width: '2000',
+            dpi: '300'
+          }
+          pdf = WickedPdf.new.pdf_from_string(string, options)
+          send_data pdf, type: 'application/pdf', disposition: 'inline'
+        end
+        
+      end
+    end
+  end
+
 end
