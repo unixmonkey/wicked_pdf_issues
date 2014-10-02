@@ -1,5 +1,12 @@
 class PagesController < ApplicationController
 
+  def issue_339
+    doc1 = render_to_string(template: 'pages/_page1')
+    doc2 = render_to_string(template: 'pages/_page2')
+    pdf_file = MultipagePdfRenderer.combine([doc1, doc2])
+    send_data pdf_file, type: 'application/pdf', disposition: 'inline'
+  end
+
   def issue_326
     @remember_token = CGI.escape(cookies['remember_token'].to_s)
     respond_to do |format|
@@ -78,7 +85,7 @@ class PagesController < ApplicationController
           pdf = WickedPdf.new.pdf_from_string(string, options)
           send_data pdf, type: 'application/pdf', disposition: 'inline'
         end
-        
+
       end
     end
   end
