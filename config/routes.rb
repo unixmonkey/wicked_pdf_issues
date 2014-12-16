@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/pages/issue_327' => 'pages#issue_327'
   get '/pages/issue_326' => 'pages#issue_326'
   get '/pages/issue_321' => 'pages#issue_321'
+
+  get "/pages/issue_370" => 'pages#issue_370'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

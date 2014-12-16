@@ -90,4 +90,17 @@ class PagesController < ApplicationController
     end
   end
 
+  def issue_370
+    respond_to do |format|
+      format.html do
+        @html = true
+        render :issue_370_with_svg_object
+      end
+      format.pdf do
+        #rendering template with Base64 encoded SVG image, instead
+        render pdf: 'issue'
+      end
+    end
+  end
+
 end
