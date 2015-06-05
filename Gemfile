@@ -39,7 +39,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# gem 'wicked_pdf', '0.10.2'
-gem 'wicked_pdf', path: '/Users/djones/code/github/mileszs/wicked_pdf'
+gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
+# gem 'wicked_pdf', path: '/Users/djones/code/github/mileszs/wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'pry-rails'
