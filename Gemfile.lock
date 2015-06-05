@@ -2,7 +2,6 @@ PATH
   remote: /Users/djones/code/github/mileszs/wicked_pdf
   specs:
     wicked_pdf (0.11.0)
-      rails
 
 GEM
   remote: https://rubygems.org/
