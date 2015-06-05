@@ -19,8 +19,10 @@ My CSS is here:
 <style>
   .box {
     <% if params[:format] == 'pdf' %>
+      /* full path to file is necessary for wkhtmltopdf to read */
       background-image: url('file://<%= Rails.root.join('app/assets/images/colorful-triangles.jpg') %>');
     <% else %>
+      /* However, most browsers will not allow file:// url access from an HTTP request */
       background-image: url('<%= asset_path('colorful-triangles.jpg') %>');
     <% end %>
     background-repeat: no-repeat;
