@@ -1,0 +1,35 @@
+<h1>Issue #321</h1>
+
+<p>
+  Hello, I'm using wkhtmltopdf in a Rails app and trying to set a border by placing an image with just borders as the background-image for another. This shows up fine in the HTML view, but in the pdf it doesn't work.
+My CSS is here:
+</p>
+<pre>
+.box {
+  background-image: url('/assets/posts/background_border.jpg'); background-repeat: no-repeat; height: 100px; width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+</pre>
+
+<p>
+  Please let me know how to solve this. Thanks!
+</p>
+
+<style>
+  .box {
+    <% if params[:format] == 'pdf' %>
+      background-image: url('file://<%= Rails.root.join('app/assets/images/colorful-triangles.jpg') %>');
+    <% else %>
+      background-image: url('<%= asset_path('colorful-triangles.jpg') %>');
+    <% end %>
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+<div class="box">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+</div>
