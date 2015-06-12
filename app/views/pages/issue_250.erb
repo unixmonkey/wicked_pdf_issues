@@ -1,0 +1,45 @@
+<h1>Issue #250</h1>
+<div id="issue_250">
+
+  <style type="text/css" media="all">
+    @font-face {
+      font-family: 'Poiret One';
+      src: url('<%= asset_data_base64('Poiret_One/PoiretOne-Regular.ttf') %>');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .poiret {
+      font-family: 'Poiret One';
+    }
+
+    @font-face {
+      font-family: "Roboto";
+      src:url("<%= asset_data_base64('Roboto/Roboto-Thin.otf') %>");
+      font-weight: 100;
+      font-style: normal;
+    }
+
+    .roboto {
+      font-family: 'Roboto';
+    }
+  </style>
+
+  <p>
+    Normal built-in font<br>
+    Grumpy wizards make toxic brew for the evil Queen and Jack.
+  </p>
+
+  <p class="poiret">
+    Poiret<br>
+    Grumpy wizards make toxic brew for the evil Queen and Jack.
+  </p>
+
+  <p class="roboto">
+    Roboto<br>
+    Grumpy wizards make toxic brew for the evil Queen and Jack.
+  </p>
+
+</div>
+
+<%= link_to 'Link to PDF version of this page', '/pages/issue_250.pdf' %>

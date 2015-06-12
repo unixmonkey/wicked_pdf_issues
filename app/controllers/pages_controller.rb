@@ -12,6 +12,15 @@ class PagesController < ApplicationController
     end
   end
 
+  def issue_250
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'issue_250'
+      end
+    end
+  end
+
   def issue_339
     doc1 = render_to_string(template: 'pages/_page1')
     doc2 = render_to_string(template: 'pages/_page2')
