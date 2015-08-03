@@ -111,4 +111,18 @@ class PagesController < ApplicationController
     end
   end
 
+  def issue_428
+    respond_to do |format|
+      format.html
+      format.pdf do
+          pdf = render_to_string pdf: '',
+                                 template: 'pages/issue_428',
+                                 page_size: 'Letter',
+                                 javascript_delay: 1000,
+                                 disable_javascript: false
+          send_data pdf, type: 'application/pdf', disposition: 'inline'
+        end
+    end
+  end
+
 end
