@@ -1,0 +1,19 @@
+<h1>Issue #435</h1>
+
+<p>
+  I'm trying to add a footer to a PDF with cover and TOC, but the footer only renders in the TOC pages. The problem is that in the call to wkhtmltopdf the footer option is passing as a local option of the TOC. Is there anyway of putting it as a Global option for all the document?
+</p>
+
+<p>
+  If I delete the TOC and the cover everything is ok, if not the footer option is in the end of the call and wkhtmltopdf take it as a local option.
+</p>
+
+<p>
+  I found this after a long search wkhtmltopdf/wkhtmltopdf#1631 (comment)
+</p>
+
+<p>
+  What can I do? is there anyway to put it as a global option?
+</p>
+
+<%= link_to 'Link to PDF version of this page', '/pages/issue_435.pdf' %>

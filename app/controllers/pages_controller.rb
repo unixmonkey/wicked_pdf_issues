@@ -3,6 +3,26 @@ class PagesController < ApplicationController
   def index
   end
 
+  def issue_435
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Guide", footer: { right: '[page] of [topage]' },
+          no_background: false,
+          disable_internal_links: false,
+          image: true,
+          layout: 'issue_435',
+          cover: "http://www.fasant.com/cover/1",
+          margin:  {  top:    10,
+                      bottom: 10,
+                      left:   10,
+                      right:  10 },
+          toc: { text_size_shrink: 0.92,
+                 header_text: "Table of Contents" }
+      end
+    end
+  end
+
   def issue_124
     respond_to do |format|
       format.html
@@ -17,6 +37,15 @@ class PagesController < ApplicationController
       format.html
       format.pdf do
         render pdf: 'issue_250'
+      end
+    end
+  end
+
+  def issue_353
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'issue_353'
       end
     end
   end
