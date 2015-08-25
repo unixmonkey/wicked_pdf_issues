@@ -1,0 +1,50 @@
+
+<%= wicked_pdf_javascript_include_tag "jquery" %>
+
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+
+<script>
+
+    $(document).ready(function loadMap() {
+        L.Browser.any3d = false;
+        var map = L.map('map').setView([51.505, -0.09], 13);
+        L.tileLayer('http://api.tiles.mapbox.com/v3/gavinheale.n30il7ce/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            maxZoom: 18
+        }).addTo(map);
+    })
+
+</script>
+
+<style>
+    #map_page {
+        padding-top: 10mm;
+        page-break-after: always;
+    }
+
+    #map {
+        border : 1px solid black;
+        width: 185mm;
+        height: 220mm;
+    }
+
+    #intro {
+        page-break-after: always;
+    }
+</style>
+
+<div id="intro">
+    <h1>Issue 428</h1>
+  <p>The map shows up looking normal in the html but in pdf, it will overflow onto the pages before and after</p>
+  <p>In the pdf, there is an intentional page break after this so you can see the overflow</p>
+</div>
+
+<div id="map_page">
+  <h2><u>Map</u></h2>
+  <br>
+  <div id="map">Loading Map...</div>
+</div>
+
+<%= link_to 'Link to PDF version of this page', '/pages/issue_428.pdf' %>
