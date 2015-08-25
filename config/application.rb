@@ -20,6 +20,6 @@ module WickedPdfIssue326
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.assets.precompile += %w( jquery.js issue_327.css )
+    config.assets.precompile += %w( jquery.js issue_327.css leaflet.js leaflet.css )
   end
 end
