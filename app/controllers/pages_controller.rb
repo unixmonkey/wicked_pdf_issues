@@ -3,6 +3,15 @@ class PagesController < ApplicationController
   def index
   end
 
+  def issue_474
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'issue_474', debug: params.key?(:debug)
+      end
+    end
+  end
+
   def issue_435
     respond_to do |format|
       format.html

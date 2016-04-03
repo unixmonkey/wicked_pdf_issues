@@ -1,0 +1,17 @@
+<h1>Issue #474</h1>
+
+<p>
+  I am new to wicked_pdf but I have Googled this to death and can't find an obvious answer. My PDF renders except for the Font Awesome icons which are just boxes (☐). I think the FA CSS is loading because if I disable the CSS load that has FA the boxes disappear on render.
+</p>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<p>
+  <i class="fa fa-camera-retro fa-lg"></i> fa-lg
+  <i class="fa fa-camera-retro fa-2x"></i> fa-2x
+  <i class="fa fa-camera-retro fa-3x"></i> fa-3x
+  <i class="fa fa-camera-retro fa-4x"></i> fa-4x
+  <i class="fa fa-camera-retro fa-5x"></i> fa-5x
+</p>
+
+<%= link_to 'Link to PDF version of this page', '/pages/issue_474.pdf' %>

@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get '/pages/issue_326' => 'pages#issue_326'
   get '/pages/issue_321' => 'pages#issue_321'
   get '/pages/issue_428' => 'pages#issue_428'
+  get '/pages/issue_474' => 'pages#issue_474'
   root to: 'pages#index'
 end
