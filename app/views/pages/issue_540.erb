@@ -1,0 +1,11 @@
+<h1>Issue #540</h1>
+
+<p>
+  I generate a PDF from HTML. While the HTML shows a space before a bold tag the PDF somehow removes this space.
+
+  This is the HTML fragment:
+</p>
+
+<div class="message"><p>Thank you very much for your order at <strong>B</strong></p>
+
+<%= link_to 'Link to PDF version of this page', '/pages/issue_540.pdf' %>
