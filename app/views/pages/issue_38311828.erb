@@ -1,0 +1,80 @@
+<h1>
+  StackOverflow
+  <a href="http://stackoverflow.com/questions/38311828/how-to-have-dynamic-header-using-wicked-pdf-to-add-page-numbering">
+    Question #38311828
+  </a>
+</h1>
+
+<p>
+  So I have a header that I want on each page that looks like this Pdf Report header and I want the page number to appear where it says [page] by the user's name. Here is what I have so far, but it is not working:
+</p>
+
+<p>
+  In my controller:
+</p>
+
+<pre>
+  render  pdf: "report",
+          page_size: "Letter",
+          layout: "pdf",
+          template: "/results/report",
+          footer: {
+              spacing: -265,
+              html: { template: '/layouts/_report_header.html'}
+          },
+          header: {
+              spacing: 3,
+              html: { template: '/layouts/_page_header.html' }
+          },
+          margin: {
+              top: 20,
+              bottom: 5
+          }
+</pre>
+
+<p>
+  In my /layouts/_page_header.html.erb
+</p>
+
+<textarea style="width:100%;height:600px;">
+  <html>
+    <head>
+      <script>
+        function number_pages() {
+          var vars={};
+          var x=document.location.search.substring(1).split('&');
+          for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = decodeURIComponent(z[1]);}
+          var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+          for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+          }
+        }
+      </script>
+    </head>
+    <body onload="number_pages()">
+      <div class="page_header inline">
+            <h3 class="margin_none font_roboto">Nutrient Tracking Tool - Report</h3>
+        </div>
+        <div class="right font_roboto">
+            <strong>User:</strong> user_name | <span class="page">[page]</span></br>
+        </div>
+        <div>
+            <hr class="line_break" color="dodgerblue">
+        </div>
+    </body>
+  </html>
+</textarea>
+
+<p>
+  According to the documentation <a href="https://github.com/mileszs/wicked_pdf#page-numbering">here on github</a>
+</p>
+
+<p>
+  Anything with a class listed in "var x" above will be auto-filled at render time.<br>
+  this should cause the span of class page to display the current page number but it does not. How can I fix this?
+</p>
+
+<% if params[:format] != 'pdf' %>
+  <%= link_to 'Link to PDF version of this page', '/pages/issue_38311828.pdf' %>
+<% end %>

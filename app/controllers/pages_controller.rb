@@ -3,6 +3,18 @@ class PagesController < ApplicationController
   def index
   end
 
+  def issue_38311828
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'report',
+          header: {
+            html: { template: '/pages/_issue_38311828_header.html' }
+          }
+      end
+    end
+  end
+
   def issue_540
     respond_to do |format|
       format.html

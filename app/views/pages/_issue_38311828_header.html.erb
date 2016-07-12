@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      function number_pages() {
+        var vars={};
+        var x=document.location.search.substring(1).split('&');
+        for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = decodeURIComponent(z[1]);}
+        var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+        for(var i in x) {
+          var y = document.getElementsByClassName(x[i]);
+          for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+        }
+      }
+    </script>
+  </head>
+  <body onload="number_pages()">
+    <div class="page_header inline">
+          <h3 class="margin_none font_roboto">Nutrient Tracking Tool - Report</h3>
+      </div>
+      <div class="right font_roboto">
+          <strong>User:</strong> user_name | <span class="page">[page]</span></br>
+      </div>
+      <div>
+          <hr class="line_break" color="dodgerblue">
+      </div>
+  </body>
+</html>
