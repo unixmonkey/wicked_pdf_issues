@@ -202,5 +202,8 @@ DEPENDENCIES
   wkhtmltopdf-binary-edge (= 0.12.3.0)
   wkhtmltopdf-heroku
 
+RUBY VERSION
+   ruby 2.4.1p111
+
 BUNDLED WITH
    1.14.6
