@@ -1,0 +1,30 @@
+<h1>
+    <a href="https://stackoverflow.com/questions/45080858/rails-send-file-send-data-sends-pdf-file-without-content">
+    Rails send_file/send_data sends pdf file without content
+    </a>
+</h1>
+
+<p>
+I am generating a pdf file using WickedPdf.new.pdf_from_string. File itself generates fine, when saved in disk and opened.
+</p>
+<p>
+  But when same file sent via send_data, browser downloads file with pages as per generated file but without any text/content in it. All pages are blank. Here is code snippet
+</p>
+
+<pre>
+  send_data File.open(pdf_file.path, 'rb').read, type: 'application/pdf', filename: 'abc.pdf'
+</pre>
+<p>
+  I have also tried send_file without any success.
+</p>
+<p>
+  Environment vars
+</p>
+<pre>
+  Rails Version: 4.2.8
+  Ruby Version: 2.3.3
+  WickedPdf Ver: 1.1.0
+</pre>
+
+<%= link_to 'Link to PDF version of this page', '/pages/issue_45080858.pdf' %>
+

@@ -3,6 +3,24 @@ class PagesController < ApplicationController
   def index
   end
 
+  def issue_45080858
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = WickedPdf.new.pdf_from_string('<html><head><title>foo</title></head><body><h1>This is a PDF</h1></body></html>')
+        Tempfile.create do |t|
+          t.binmode
+          t.write(pdf)
+          t.rewind
+          t.close
+          send_data File.open(t.path, 'rb').read,
+            type: 'application/pdf',
+            filename: 'abc.pdf'
+        end
+      end
+    end
+  end
+
   def issue_45329522
     @books = Book.all
     puts @books.inspect
