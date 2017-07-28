@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = WickedPdf.new.pdf_from_url('https://github.com/mileszs/wicked_pdf')
+        pdf = WickedPdf.new.pdf_from_url('https://google.com')
         send_data pdf, type: 'application/pdf', disposition: 'inline'
       end
     end
