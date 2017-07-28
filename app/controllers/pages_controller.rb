@@ -3,6 +3,16 @@ class PagesController < ApplicationController
   def index
   end
 
+  def issue_672
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = WickedPdf.new.pdf_from_url('https://github.com/mileszs/wicked_pdf')
+        send_data pdf, type: 'application/pdf', disposition: 'inline'
+      end
+    end
+  end
+
   def issue_608
     respond_to do |format|
       format.html

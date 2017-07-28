@@ -1,0 +1,16 @@
+<h1>Issue #672</h2>
+
+<p>
+  I try use this method to create pdf :
+</p>
+<pre>
+  pdf = WickedPdf.new.pdf_from_url('https://github.com/mileszs/wicked_pdf')
+</pre>
+<p>
+  but my rails server stay blocked. no log, no error, browser pending response in infinite loop...
+</p>
+<p>
+  don't understand what wrong...
+</p>
+
+<%= link_to 'Link to PDF generated using the above code', '/pages/issue_672.pdf' %>
