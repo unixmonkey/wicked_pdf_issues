@@ -3,6 +3,17 @@ class PagesController < ApplicationController
   def index
   end
 
+  def issue_45329522
+    @books = Book.all
+    puts @books.inspect
+    respond_to do |format|
+      format.html
+      format.pdf {
+        render pdf: 'foo'
+      }
+    end
+  end
+
   def issue_672
     respond_to do |format|
       format.html

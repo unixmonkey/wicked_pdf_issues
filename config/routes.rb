@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/pages/issue_45329522' => 'pages#issue_45329522'
   get '/pages/issue_672' => 'pages#issue_672'
   get '/pages/issue_43980674' => 'pages#issue_43980674'
   get '/pages/issue_608' => 'pages#issue_608'

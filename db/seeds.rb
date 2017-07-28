@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Book.first_or_create([
+  { name: 'Harry Potter and the Chamber of Secrets' },
+  { name: 'The Lion, the Witch, and the Wardrobe' },
+])
