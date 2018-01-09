@@ -3,6 +3,9 @@ class PagesController < ApplicationController
   def index
   end
 
+  def issue_709
+  end
+
   def issue_45080858
     respond_to do |format|
       format.html
