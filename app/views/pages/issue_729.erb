@@ -1,0 +1,21 @@
+<h1>Issue #729</h1>
+
+<p>
+  While this is rendered properly:
+</p>
+<p>
+  &lt;img src="&lt;%= File.join($config[:wicked_pdf_static_assets_physical_file_root], '/images/sample.png' ) %&gt;" /&gt;
+</p>
+<p>
+  this doesn't, as if an image didn't exist:
+</p>
+<p>
+  <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" />
+</p>
+</p>
+  Is this an intended behaviour? What's the workaround? An image exists
+</p>
+
+<% if request.format == :html %>
+  <%= link_to 'Link to PDF version of this page', '/pages/issue_729.pdf' %>
+<% end %>
