@@ -1,0 +1,43 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>Header</title>
+    <script>
+        function number_pages() {
+        var vars = {};
+        var x = document.location.search.substring(1).split('&');
+        for (var i in x) {
+            var z = x[i].split('=', 2);
+            vars[z[0]] = decodeURIComponent(z[1]);
+        }
+        var x = ['frompage', 'topage', 'page', 'webpage', 'section', 'subsection', 'subsubsection'];
+        for (var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for (var j = 0; j < y.length; ++j) y[j].textContent = vars[x[i]];
+        }
+        }
+    </script>
+  </head>
+  <body onload="number_pages()" style="padding-top: 50px;">
+
+    <div style="display: block; background-color:pink">
+        <div class="col">
+            <%= wicked_pdf_image_tag 'ebail_logo.png', class: 'pdf-statement-logo', style:'margin-bottom: 5px;' %>
+        </div>
+        <div class="col center">
+            <h1 style="padding: 0;margin: 0;font-size: 17px;">COMPTE DE PROPRIETAIRE</h1>
+            <h2 style="padding: 0;margin: 0;font-size: 13px;">du  au  </h2>
+        </div>
+        <div class="col right">
+            Page <span class="page"></span> / <span class="topage"></span>
+        </div>
+    </div>
+    <div style="display: block;">
+        <div style="width: 49%; display: inline-block;">
+            <%= " Propriétaire : @exercise.exercicable.fullname " %>
+        </div>
+    </div>
+
+  </body>
+</html>

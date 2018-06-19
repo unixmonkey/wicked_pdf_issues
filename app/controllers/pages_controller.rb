@@ -1,6 +1,29 @@
 class PagesController < ApplicationController
 
+  layout -> { 'issue_744' if action_name == 'issue_744' }
+
   def index
+  end
+
+  def issue_744
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'mypdf',
+               encoding: 'utf8',
+               orientation: 'Landscape',
+               margin: {
+                 bottom: 5,
+                 top: 40
+               },
+               header: {
+                 html: { template: '/pages/_issue_744_header.html' },
+                 spacing: 10
+               }
+      end
+    end
+  end
+
   def issue_729
     respond_to do |format|
       format.html
@@ -8,8 +31,6 @@ class PagesController < ApplicationController
         render pdf: 'issue_729'
       }
     end
-  end
-
   end
 
   def issue_709
