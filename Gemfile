@@ -41,11 +41,11 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'wicked_pdf', '=1.1.0'
+gem 'wicked_pdf', '2.6.3'
 # gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
 # gem 'wicked_pdf', path: '/Users/djones/code/github/unixmonkey/wicked_pdf'
 # gem 'wkhtmltopdf-binary'
-gem 'wkhtmltopdf-binary-edge', '=0.12.3.0', group: :production
+gem 'wkhtmltopdf-binary-edge', '0.12.6.0', group: :production
 gem 'pry-rails'
 gem 'pry-byebug'
 
