@@ -5,6 +5,20 @@ class PagesController < ApplicationController
   def index
   end
 
+  def issue_824
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'issue_824',
+               footer: {
+                 html: {
+                  template: '/pages/_issue_824_footer.html'
+                 }
+               }
+      end
+    end
+  end
+
   def issue_744
     respond_to do |format|
       format.html
